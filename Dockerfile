@@ -16,6 +16,7 @@ RUN \
   pip2 install python-dateutil && \
   pip2 install qtfaststart && \
   pip2 install deluge-client && \
+  pip2 install gevent && \
   git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git /sickbeard_mp4_automator/ && \
   touch /sickbeard_mp4_automator/info.log && \
   chmod a+rwx -R /sickbeard_mp4_automator && \
