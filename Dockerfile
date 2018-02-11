@@ -21,5 +21,5 @@ RUN \
   chmod a+rwx -R /sickbeard_mp4_automator && \
   ln -s /downloads /data && \
   ln -s /config_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini
- 
-VOLUME config_mp4_automator
+
+VOLUME /config_mp4_automator
