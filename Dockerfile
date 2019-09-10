@@ -2,6 +2,7 @@ FROM binhex/arch-delugevpn
 MAINTAINER sabrsorensen
 
 RUN \
+  pacman -Syu --noconfirm && \
   pacman -S --needed --noconfirm git ffmpeg python-pip && \
   pacman -Scc --noconfirm
 
