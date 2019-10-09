@@ -1,6 +1,13 @@
 FROM binhex/arch-delugevpn
 MAINTAINER sabrsorensen
 
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/sabrsorensen/arch-delugevpn-mp4.git" \
+      org.label-schema.build-date=$BUILD_DATE
+
 RUN \
   pacman -Syu --noconfirm && \
   pacman -S --needed --noconfirm git ffmpeg python-pip && \
