@@ -10,11 +10,28 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 
 RUN \
   pacman -Syu --noconfirm && \
-  pacman -S --needed --noconfirm git ffmpeg python-pip && \
+  pacman -S --needed --noconfirm \
+        ffmpeg \
+        gcc \
+        git \
+        python-pip && \
   pacman -Scc --noconfirm
 
 RUN \
-  pip install --no-cache-dir --upgrade pip requests requests[security] requests-cache babelfish 'guessit<2' 'subliminal<2' stevedore==1.19.1 python-dateutil qtfaststart deluge-client gevent && \
+  pip install --no-cache-dir --upgrade \
+        babelfish \
+        deluge-client \
+        gevent \
+        'guessit<2' \
+        pip \
+        python-dateutil \
+        qtfaststart \
+        requests \
+        requests-cache \
+        requests[security] \
+        stevedore==1.19.1 \
+        'subliminal<2' \
+        tmdbsimple && \
   git clone --depth 1 --single-branch --branch master git://github.com/mdhiggins/sickbeard_mp4_automator.git /sickbeard_mp4_automator/ && \
   chmod a+rwx -R /sickbeard_mp4_automator && \
   ln -s /downloads /data && \
